@@ -1,5 +1,5 @@
-# Use Node.js 14
-FROM node:14
+# Use the 'oven/bun' base image
+FROM oven/bun
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install app dependencies
-RUN npm install
+RUN bun install
 
 # Copy app source code to the container
 COPY . .
@@ -17,5 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Command to start the app
-CMD ["node", "index.js"]
-
+CMD ["bun", "index.js"]
