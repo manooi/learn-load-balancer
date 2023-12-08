@@ -23,6 +23,19 @@ services:
       dockerfile: Dockerfile
     networks:
       - my_network
-      
+
+  go-api-1:
+    build:
+      context: ./go
+      dockerfile: Dockerfile
+    networks:
+      - my_network
+
+  go-api-2:
+    build:
+      context: ./go
+      dockerfile: Dockerfile
+    networks:
+      - my_network
 networks:
   my_network:
