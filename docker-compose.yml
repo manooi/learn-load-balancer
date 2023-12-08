@@ -10,21 +10,19 @@ services:
     networks:
       - my_network
 
-  webapp1:
-    image: express-api
+  express-api-1:
+    build:
+      context: ./express
+      dockerfile: Dockerfile
     networks:
       - my_network
 
-  webapp2:
-    image: express-api
+  express-api-2:
+    build:
+      context: ./express
+      dockerfile: Dockerfile
     networks:
       - my_network
-
-  webapp3:
-    image: express-api
-    networks:
-      - my_network
-
+      
 networks:
   my_network:
-
